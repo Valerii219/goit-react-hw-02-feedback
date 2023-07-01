@@ -1,6 +1,5 @@
 const FeedbackOptions =({options, onLeaveFeedback}) =>{
     return (
-               
         <div className="" > 
         <h2 className="">Please leave feedback</h2>
         {options.map(option => (
@@ -11,6 +10,5 @@ const FeedbackOptions =({options, onLeaveFeedback}) =>{
         </div>
 )
 }
-    
 
 export default FeedbackOptions;

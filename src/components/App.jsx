@@ -14,8 +14,6 @@ class App extends Component {
     }));
   };
 
-  
-
   render() {
     const {good, neutral, bad} = this.state;
     const total =  good + neutral + bad;
@@ -26,11 +24,8 @@ class App extends Component {
       }
   
       return Math.round((good / total) * 100);
-     
     };
-   
-     
-    
+  
     return (
       <>
         <div
@@ -54,6 +49,7 @@ class App extends Component {
             options={['good', 'neutral', 'bad']}
             onLeaveFeedback={this.handleClick}
           />
+          {/* <Notification message="There is no feedback"/> */}
         </div>
       </>
     );
