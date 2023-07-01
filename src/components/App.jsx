@@ -1,4 +1,5 @@
-import FeedbackOptions from "./Feedback";
+import FeedbackOptions from "./FeedbackOptions/FeedbackOptions";
+import Section from "./Section/Section";
 import Statistics from "./Statistics/Statistics";
 import React, { Component } from "react";
 class App extends Component {
@@ -31,24 +32,24 @@ class App extends Component {
         <div
           style={{
             height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
             fontSize: 40,
             color: "#010101"
           }}
         >
+           <Section title="Leave Feedback">
+          <FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.handleClick}
+          />
+          </Section><Section title="Statistics">
           <Statistics
             good={this.state.good}
             neutral={this.state.neutral}
             bad={this.state.bad}
             total={total}
             positivePercentage={positivePercentage()}
-          />
-          <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
-            onLeaveFeedback={this.handleClick}
-          />
+          /></Section>
+         
           {/* <Notification message="There is no feedback"/> */}
         </div>
       </>
